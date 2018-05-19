@@ -1,5 +1,5 @@
 # File: www_payload.py
-# Author: draco
+# Author: draco  -  jtang613@gmail.com
 #
 
 import sys
