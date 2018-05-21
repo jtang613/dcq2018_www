@@ -27,10 +27,12 @@ The challenge hints:
 
 Connecting to the game server we are presented with a prompt for a URL:
 > Welcome to the pre-alpha web aka 520d462abb92809b4fa1eaaafabbaee4
+
 > What URL would you like this old dog to fetch?
 
 Entering a known-good URL such as http://www.google.com results in the message:
 > Booting up
+
 (after a short wait)
 
 Eventually, we begin receiving messages and base64 encoded lines where upon completion, the connection is terminated remotely. Decoding the base64 lines reveals them to be PNG screenshots of the target, running the NeXTSTEP operating system on a Motorola 68000 class processor. First we watch it boot, then it opens a web browser (the very first web browser, WorldWideWeb, written by Tim Berners-Lee) and proceeds to open the URL we provided.
@@ -53,6 +55,7 @@ Examining the output images closer reveals a file browser showing the home direc
 
 The obvious choice is a non-starter:
 > What URL would you like this old dog to fetch?  file:///me/flag
+
 > Error, I only know http
 
 It appears the game server is filtering the user-supplied URL before passing it to the browser. We must provide a URL starting with 'http://'.
