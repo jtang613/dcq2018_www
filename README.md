@@ -164,7 +164,7 @@ But... given the costraints mentioned, we must be mindful when constructing our 
 
 Here we use the arbitrary values of 0x78787878 and 0x43434343 to subtract intermediate values in order to produce the intended value prior to storing it.
 
-Similarly, for instructions and opcodes containing blacklisted bytes, we can swap registers or find subsitute instructions to achieve the desired result. This is noted in the final shellcode source file.
+Similarly, for instructions and opcodes containing blacklisted bytes, we can swap registers or find substitute instructions to achieve the desired result. This is noted in the final shellcode source file.
 
 The final working solution was not arrived at as quickly as one might guess. A great deal of iteration, uncertainty and rework was required. One of the most frustrating was the final 'stack tweaks'.  When running under GDB, the exploit appeared stable, however when run against a standalone browser, it would crash. One reason for this was that the stack layout is offset ~0x228 between GDB and standalone. This was determined by attaching the debugger to the standalone instance rather than launching the browser from within the debugger. Upon adjusting the shellcode and FP addresses in the payload, it *still* crashed! Several hours of debug and experimentation would pass before it was determined that setting the 'Console Trace' flag would allow the standalone version to successfully run. It's likely that a more careful examination of the problem could address this in a cleaner way, but for this purpose it's an acceptable compromise.
 
