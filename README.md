@@ -1,4 +1,4 @@
-## Defcon 2018 Qualifiers - WWW Solution / Wite-up
+## Defcon 2018 Qualifiers - WWW Solution / Write-up
 
 ### tl;dr
 
